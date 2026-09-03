@@ -266,6 +266,9 @@ export const certifications = [
   { name: "Claude Code in Action", org: "LinkedIn", year: "2026" },
   { name: "AWS Partition", org: "AWS", year: "July 15, 2026" },
   { name: "Fundamentals of Deep Learning", org: "NVIDIA", year: "2026" },
+  { name: "AWS Certified Cloud Practitioner", org: "LinkedIn", year: "2026" },
+  { name: "Prompt Engineering with ChatGPT", org: "LinkedIn", year: "2026" },
+  { name: "SQL intermediate", org: "Hackerrank", year: "2026" },
 ];
 
 export const codingProfiles = [

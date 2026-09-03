@@ -1,0 +1,38 @@
+
+ ⛅️ wrangler 4.128.0
+────────────────────
+Using redirected Wrangler configuration.
+ - Configuration being used: ".output\server\wrangler.json"
+ - Original user's configuration: "<no user config found>"
+ - Deploy configuration file: ".wrangler\deploy\config.json"
+No Functions. Shimming...
+✨ Parsed 1 valid header rule.
+Using secrets defined in .env
+Your Worker has access to the following bindings:
+Binding                                                                             Resource                  Mode
+env.CF_PAGES ("1")                                                                  Environment Variable      local
+env.CF_PAGES_BRANCH ("main")                                                        Environment Variable      local
+env.CF_PAGES_COMMIT_SHA ("c0a902ec4ee1f8adb34cacd4baac72ee18369...")                Environment Variable      local
+env.CF_PAGES_URL ("https://c0a902e.srisuthanvpr-new-port...")                       Environment Variable      local
+env.SUPABASE_PROJECT_ID ("(hidden)")                                                Environment Variable      local
+env.SUPABASE_PUBLISHABLE_KEY ("(hidden)")                                           Environment Variable      local
+env.SUPABASE_URL ("(hidden)")                                                       Environment Variable      local
+env.VITE_SUPABASE_PROJECT_ID ("(hidden)")                                           Environment Variable      local
+env.VITE_SUPABASE_PUBLISHABLE_KEY ("(hidden)")                                      Environment Variable      local
+env.VITE_SUPABASE_URL ("(hidden)")                                                  Environment Variable      local
+
+⎔ Starting local server...
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mservice core:user:6a7d5f7c-160f-4892-b8ca-50cce60e167b: Uncaught Error: No such module "D:\Portfolio\.wrangler\tmp\bundle-gJ0zpv\middleware-insertion-facade.js".[0m
+
+    imported from "pages-shim.js"
+
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mThe Workers runtime failed to start. There was likely a problem with the workerd binary or your configuration.[0m
+
+  Runtime stderr:
+  {"timestamp":"1788370042518","level":"error","source":"src/workerd/server/json-logger.c++:127","message":"service core:user:6a7d5f7c-160f-4892-b8ca-50cce60e167b: Uncaught Error: No such module \"D:\\Portfolio\\.wrangler\\tmp\\bundle-gJ0zpv\\middleware-insertion-facade.js\".\n  imported from \"pages-shim.js\"","context_depth":0}
+
+
+[32mIf you think this is a bug then please create an issue at https://github.com/cloudflare/workers-sdk/issues/new/choose[0m
+🪵  Logs were written to "C:\Users\Admin\AppData\Roaming\xdg.config\.wrangler\logs\wrangler-2026-09-02_17-27-19_560.log"

@@ -3,7 +3,6 @@ import { Github, Linkedin, Loader2, Mail, Phone, Send } from "lucide-react";
 import { toast } from "sonner";
 import { SectionHeading } from "./SectionHeading";
 import { profile } from "@/data/portfolio";
-import { supabase } from "@/integrations/supabase/client";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -41,16 +40,28 @@ export function Contact() {
     }
 
     setSending(true);
-    const { error } = await supabase.from("contact_messages").insert(payload);
-    setSending(false);
+    try {
+      const response = await fetch(`https://formsubmit.co/ajax/${profile.email}`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: JSON.stringify(payload),
+      });
 
-    if (error) {
+      if (!response.ok) {
+        throw new Error("Failed to send message");
+      }
+
+      toast.success("Thanks! Your message has been sent.");
+      form.reset();
+    } catch (error) {
+      console.error("Form error:", error);
       toast.error("Message could not be sent. Please email me directly.");
-      return;
+    } finally {
+      setSending(false);
     }
-
-    toast.success("Thanks! Your message has been sent.");
-    form.reset();
   }
 
   return (
